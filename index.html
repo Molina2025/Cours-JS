@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: darkgray;">
+<main>
+    <header>
+
+    </header>
+    <!--Introduction à JS-->
+    <section>
+        <!--<h2>Les termes techniques :</h2>
+        <table border="1">
+    <thead>
+        <tr>
+            <th>Élément</th>
+            <th>Type</th>
+            <th>Explication</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>let</code></td>
+            <td>Mot-clé</td>
+            <td>Déclare une variable modifiable</td>
+        </tr>
+        <tr>
+            <td><code>resultat</code></td>
+            <td>Variable</td>
+            <td>Stocke le résultat du calcul</td>
+        </tr>
+        <tr>
+            <td><code>=</code></td>
+            <td>Opérateur d'affectation</td>
+            <td>Assigne une valeur à la variable</td>
+        </tr>
+        <tr>
+            <td><code>10</code></td>
+            <td>Opérande</td>
+            <td>Nombre utilisé dans le calcul</td>
+        </tr>
+        <tr>
+            <td><code>+</code></td>
+            <td>Opérateur arithmétique</td>
+            <td>Additionne deux nombres</td>
+        </tr>
+        <tr>
+            <td><code>5</code></td>
+            <td>Opérande</td>
+            <td>Nombre utilisé dans le calcul</td>
+        </tr>
+    </tbody>
+</table>-->
+        <h2>Les premiers éléments en JS :</h2>
+        <p>Il est important de connaître qu'en JavaScript <strong style="color: rebeccapurple; font-size: 30px;">getElementById() est super important et utile !</strong>.</p>
+        <p>cela permet de modifier le contenu HTML, il faut savoir que JS est là pour programmer le comportement des pages web.<br>
+        Pour cela les éléments qui sont des les parenthèses du getElementById(ici) modifie l'élément désigné par innerHTML.</p>
+        <p id="demo">si tu click sur le bouton je serais modifier ouin ouin !</p>
+        <button type="button" onclick='document.getElementById("demo").innerHTML="Pourquoi tu as clické dessus ouin ouin !"' style="font-size: 20px;">Ici</button>
+        <p>Il est aussi possible d'agir sur les images comme l'exemple suivant :</p>
+        <button onclick="document.getElementById('image').src='images/trundle avant.webp'" style="font-size: 15px;">avant la refonte</button>
+        <img id="image" src="images/trundle avant.webp" style="width:100px">
+        <button onclick="document.getElementById('image').src='images/trundle apres.webp'" style="font-size: 15px;">après la refonte</button>
+        <p id="font">Le JS peut modifier les styles truc de fou !! click tu verras bien.</p>
+        <button onclick="document.getElementById('font').style.fontSize='35px'" style="font-size: 15px;">Click pas dessus, c'est hudge !</button>
+        <br>
+        <p id="oui">On peut aussi masquer et afficher des éléments HTML :</p>
+        <p id="non" style="display: none">J'apparaît comme par magie ahahahah.</p>
+        <button onclick="document.getElementById('oui').style.display='none'">je fait disparaître !</button>
+        <button onclick="document.getElementById('oui').style.display='block'">je fait apparaître !</button>
+        <button onclick="document.getElementById('non').style.display='block'">Surprise</button>
+        <p id="para"></p>
+        <p id="suite"> Et il faut mettre la source dans la balise script comme ceci script src="nomDuFichierJS.js"script</p>
+        <button onclick="nomFunction()">Suite du fonctionnement JS</button>
+        <script>
+            document.getElementById("para").innerHTML = "il est important de savoir que ton JS pour qu'il soit utilisé de façon extérieur il faut utiliser la balise script et en fin de body et non après mais avant la fermeture de la balise body.";
+            function nomFunction(){
+                document.getElementById("suite").innerHTML="Le changement de texte est réalisé grâce à une function voir le code pour le fonctionnement.";
+            }
+        </script>
+        <h3>Les possibilités d'affichage JS :</h3>
+        <p>il est possible d'afficher des données de différentes façon :</p>
+        <p>Comme vue précédemment grâce à la méthode document.getElementById(id) et l'id est définit par innerHTML, un exemple ci-dessous :</p>
+        <p id="un"></p>
+        <p>Il est aussi possible d'afficher grâce à document.write()</p>
+        <p id="deux"></p>
+        <script>
+            document.getElementById("un").innerHTML = 5+6;
+            document.write(5+5);
+            document.getElementById("deux").innerHTML = "En HTML, les instructions JS sont éxécutées par le navigateur.";
+        </script>
+        <br>
+        <p>Par contre l'utilisation de document.write supprimera tout le HMTL existant tu verras le résultat avec le bouton ci-dessous.</p>
+        <button onclick="document.write('hello')">BOOMMM</button>
+        <br>
+        <button onclick="window.alert(60+9)">Alert avec window.alert</button>
+        <p>Pour les éléments window.write, window.alert, etc... la spécification du window est facultative.</p>
+        <p>Pour la partie débogage, il faut utiliser la console console.log().</p>
+        <p>Afin d'imprimer le contenu de la fenêtre il faut utiliser la console window.print()<br></p>
+        <button onclick="print()">imprimer</button>
+        <p id="quatre"></p>
+        <p id="cinq"></p>
+        <script>
+            let a, b, c;
+            a = 10;
+            b = 10;
+            c = a - b;
+            document.getElementById("quatre").innerHTML = 
+            "Ce résultat est du à l'opération a - b = c" +" "+ c;
+            let w, d, p;
+            w = 10; d = 10; p = w + d;
+            document.getElementById("cinq").innerHTML = 
+            "Il est possible d'utiliser des raccourci au lieu de faire a = 5; à la ligne tu peux faire a, b, c; puis à la ligne a = 10; b = 10; c = a + b;" + " " + p;
+        </script>
+        <p>Les <b>variables</b> peuvent être déclarées de 4 manières :
+        <ul>
+            <li>Automatiquement</li>
+            <li>En utilisant <em>var</em>, qui est utilisé trés peu étant donné qu'il est utilisé pour les vieux navigateurs.</li>
+            <li>En utilisant <em>let</em>, sera utilisé quand <em>const</em> ne peut pas être utilisé ou quand la valeur peux être modifié.</li>
+            <li>En utilisant <em>const</em>, sera utilisé si la valeur ne doit pas être modifiée.</li>
+        </ul></p>
+        <p>Toutes <b style="font-size: 20px; color: red;">les variables</b> JS doivent être identifiées par des noms uniques.<br>
+        Ces noms uniques sont appelés <b style="font-size: 20px; color: red;"> identifiants</b> (les identifiants sont sensibles à la casse).</p>
+        <p>En JS le signe (=) est un <b>opérateur «d'affectation»</b> par exemple :<br>
+        x = x + 5 dans ce cas x à pour valeur x + 5, (la valeur de x est incrémentée de 5).</p>
+        <p>Les variables JS peuvent contenir des nombres et des valeurs textuelles, les valeurs textuelles sont appelées <strong>string</strong>.<br>
+        Les strings sont écrites entre "" ou '' et les nombres ne nécessite pas de guillemets (si les nombres sont entre guillemets ils seront traités comme un string).</p>
+        <section>
+        <h4>Déclaration variable JS :</h4>
+        <p>Pour rappel, en JS on crée des variables avec <em>const</em> et <em>let</em> (moins avec <em>var</em>) puis vous <strong>déclarez</strong>, voir l'exemple suivant :<br>
+        <em style="color: blue;">const nomDeclaration;</em> dans cet exemple la variable est <strong>const</strong> et la déclaration <strong>nomDeclaration</strong>.</p>
+        <p>
+            Après la déclaration juste ci-dessus, celle-ci est <em>undefined</em>, 
+            afin d'attribuer une valeur à la variable, il faut utiliser le signe (<code>=</code>).<br>
+            Un exemple :
+        </p>
+        <p id="nomId"></p>
+        <p id="nombreVariable"></p>
+        <p>Pour information, pour la variable var si celle-ci est redéclarez elle ne perdra pas sa valeur au contraire des variables let et const.</p>
+        <script>
+
+            const nomDeclaration = "Après déclaration, il faut faire appel à la déclaration grâce à document.getElementById('nomId').innerHTML = nomDeclaration;";
+            
+            document.getElementById('nomId').innerHTML = nomDeclaration;
+
+            const lesVariables = "Il est aussi possible de déclarer plusieurs variables dans une seule instruction, const prénom = 'Rémi', nom ='molina', age = '34';";
+            document.getElementById('nombreVariable').innerHTML = lesVariables;
+        </script>
+        </section>
+        <section>
+            <h4>La concaténation :</h4>
+            <p>Il est possible de faire de l'arithmétique avec des variables en utilisant des opérateurs comme =, +, -, *, /, etc...<br>
+            Il est possible de concaténées (une idée d'assemblage linéaire d'élément distincts en un tout cohérent) <code>let x = 5 + 2 + 3;</code> ou encore des strings comme <code>let x = "remi" + " " + "molina";</code>.<br>
+            Il y a aussi des exception comme les exemples suivant :</p>
+            <p><code>let x = "5" + 2 + 3;</code> Comme les guillemets sont mis au début le reste des nombres sera traité comme des chaînes de sting et concaténé et donnera la réponse suivante :</p>
+            <p id="x1" style="color: blue;"></p>
+            <p><code>let y = 5 + 2 + "3";</code> Comme les guillemets sont mis à la fin 5 + 2 sera additionné et le 3 entre guillement sera concaténé avec le  et donnera la réponse suivante :</p>
+            <p id="y1" style="color: blue;"></p>
+            <h4>Les particularités de <em>let</em>, <em>const</em> et <em>var</em> :</h4>
+            <p>Les blocs sont représentés par des accolades ({}), les variables <em>let</em> et <em>const</em> déclarées à l'intérieur du bloc ne sont pas accessibles depuis l'extérieur.<br>
+            C'est à dire :<pre><code>{
+    let x = 2;
+}
+// le x ne peut pas être utilisé à l'extérieur des accolades.
+            </code></pre></p>
+            <p>Alors que la variable <em>var</em> ont toujours une <b>portée globale</b>, les variables déclarées par <em>var</em> <b>Ne peuvent pas</b> avoir une portée de bloc,<br>
+            exemple :<pre><code>{
+    let y = 10;
+}
+// le y peut être utilisé à l'extérieur des accolades.
+            </code></pre><b style="color: red; font-size: 20px;">Attention :</b> Comme <em>var</em> peut être redéclarée et que le code est lu du haut vers le bas la dernière variable <em>var</em> sera pris en compte.<br>
+        Alors que pour <em>let</em> et <em>const</em> la première déclaration sera prise en compte.</p>
+            <p>Conceernant la variable <em>const</em> celle-ci est un peu trompeur, elle ne définit pas une valeur constante mais une référence constante à une valeur.<br>
+            je m'explique, dans le premier tableau on peut modifier, ajouter, supprimer, etc... des éléments mais dans le second on ne peut pas modifier le tableau en lui même.<br>
+<br>Premier exemple :<pre><code>const fruits = ["pomme", "banane", "orange"];
+
+// On peut modifier le contenu du tableau
+
+fruits.push("fraise");
+
+console.log(fruits); // Affiche : ["pomme", "banane", "orange", "fraise"]</code></pre>
+
+Second exemple :<pre><code>const fruits = ["pomme", "banane"];
+
+// Erreur : on ne peut pas réassigner un nouveau tableau
+fruits = ["fraise", "cerise"];
+</code></pre></p>
+            <h4>Les opérateurs :</h4>
+            <h5>Les opérateurs de comparaison :</h5>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Opérateur</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>==</td>
+                        <td>égal à</td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>égal en valeur et en type</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>différent de</td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>différent en valeur ou en type</td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>supérieur à</td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>inférieur à</td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>supérieur ou égal à</td>
+                    </tr>
+                    <tr>
+                        <td><=</td>
+                        <td>inférieur ou égal à</td>
+                    </tr>
+                    <tr>
+                        <td>?</td>
+                        <td>opérateur ternaire</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Les opérateurs arithmétique :</h5>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Opérateur</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+</td>
+                        <td>Addition</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Soustraction</td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>Multiplication</td>
+                    </tr>
+                    <tr>
+                        <td>**</td>
+                        <td>Exponentiation</td>
+                    </tr>
+                    <tr>
+                        <td>/</td>
+                        <td>Division</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>Modulo</td>
+                    </tr>
+                    <tr>
+                        <td>++</td>
+                        <td>incrémentée</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>décrémentée</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script>
+                let x = "5" + 2 + 3;
+                document.getElementById('x1').innerHTML = x;
+                let y = 5 + 2 + "3";
+                document.getElementById('y1').innerHTML = y;
+            </script>
+            <h5>Les opérateurs et opérandes :</h5>
+            <table border="1">
+                <thead>
+                    <th>Opérande</th>
+                    <th>Opérateur</th>
+                    <th>Opérande</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>+</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Dans le tableau ci-dessus on peu voir que l'opérande sont les nombres 100 (les opérandes ne sont pas obligatoirement des nombres mais aussi des chaînes de caractères, etc...),<br>
+            l'opérateur est représenté par le symbole <code>+</code>.</p>
+            <p>Pour l'opérateur d'exponentiation (<code>**</code>) qui élève le premier opérande à la puissance du deuxième opérande.<br>
+            <b>Petite astuce :</b> <code>**</code> peut être remplacé par <code>Math.pow(x,y)</code></p>
+            <p>Un exemple ci-dessous :</p>
+            <pre><code>
+                let x = 5;
+                let z = Math.pow (x,2)
+            </code></pre>
+            <h5>Tableau des opérateurs d’affectation :</h5>
+            <table border="1">
+                <thead>
+                  <tr>
+                    <th>Opérateur</th>
+                    <th>Exemple</th>
+                    <th>Équivalent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>=</td>
+                    <td>x = y</td>
+                    <td>x = y</td>
+                  </tr>
+                  <tr>
+                    <td>+=</td>
+                    <td>x += y</td>
+                    <td>x = x + y</td>
+                  </tr>
+                  <tr>
+                    <td>-=</td>
+                    <td>x -= y</td>
+                    <td>x = x - y</td>
+                  </tr>
+                  <tr>
+                    <td>*=</td>
+                    <td>x *= y</td>
+                    <td>x = x * y</td>
+                  </tr>
+                  <tr>
+                    <td>/=</td>
+                    <td>x /= y</td>
+                    <td>x = x / y</td>
+                  </tr>
+                  <tr>
+                    <td>%=</td>
+                    <td>x %= y</td>
+                    <td>x = x % y</td>
+                  </tr>
+                  <tr>
+                    <td>**=</td>
+                    <td>x **= y</td>
+                    <td>x = x ** y</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5>Tableau des opérateurs de décalage avec affectation :</h5>
+  
+              <p>
+                Les opérateurs ci-dessous permettent de <strong>décaler les bits</strong> d’une variable vers la gauche ou vers la droite 
+                et de <strong>réaffecter</strong> le résultat dans la même variable.  
+                <br>
+                - <code>&lt;&lt;=</code> : décale les bits vers la gauche (multiplie la valeur par <code>2<sup>y</sup></code>).  
+                <br>
+                - <code>&gt;&gt;=</code> : décale les bits vers la droite (divise la valeur par <code>2<sup>y</sup></code>, en gardant le bit de signe si c’est un entier signé).  
+                <br>
+                - <code>&gt;&gt;&gt;=</code> (JavaScript) : décale les bits vers la droite sans conserver le signe (on rajoute des zéros à gauche).  
+              </p>
+            
+              <p>
+                <strong>Remarque :</strong> même si tu ne maîtrises pas toute la logique binaire, retiens simplement que déplacer vers la gauche 
+                multiplie la valeur par <code>2<sup>nombre_de_décalages</sup></code>, alors que déplacer vers la droite divise par <code>2<sup>nombre_de_décalages</sup></code>.
+              </p>
+            
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Opérateur</th>
+                    <th>Exemple</th>
+                    <th>Équivalent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;&lt;=</code></td>
+                    <td><code>x &lt;&lt;= y</code></td>
+                    <td><code>x = x &lt;&lt; y</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&gt;&gt;=</code></td>
+                    <td><code>x &gt;&gt;= y</code></td>
+                    <td><code>x = x &gt;&gt; y</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&gt;&gt;&gt;=</code></td>
+                    <td><code>x &gt;&gt;&gt;= y</code></td>
+                    <td><code>x = x &gt;&gt;&gt; y</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            
+              <h6>Exemples d’utilisation :</h6>
+              
+              <h7>Exemple 1 : Décalage à gauche (<code>&lt;&lt;=</code>)</h7>
+              <p>
+                Si <code>x</code> vaut <code>5</code> (binaire : <code>0101</code>) et que tu fais <code>x &lt;&lt;= 1</code>, alors les bits
+                de <code>x</code> sont décalés d’une place vers la gauche, ce qui devient <code>1010</code> (en binaire), soit 
+                <code>10</code> en décimal. En pratique, c’est comme multiplier <code>5</code> par <code>2</code>.
+              </p>
+            
+              <h7>Exemple 2 : Décalage à droite (<code>&gt;&gt;=</code>)</h7>
+              <p>
+                Si <code>x</code> vaut <code>8</code> (binaire : <code>1000</code>) et que tu fais <code>x &gt;&gt;= 2</code>, 
+                tu déplaces les bits de <code>x</code> de 2 places vers la droite, ce qui devient <code>0010</code> (en binaire), 
+                soit <code>2</code> en décimal. C’est comme diviser <code>8</code> par <code>2^2</code>, donc par <code>4</code>.
+              </p>
+            
+              <h7>Exemple 3 : Décalage à droite non signé (<code>&gt;&gt;&gt;=</code> en JavaScript)</h7>
+              <p>
+                En JavaScript, <code>x &gt;&gt;&gt;= 1</code> ignore le bit de signe lors du décalage. Si <code>x</code> est négatif, 
+                le résultat sera converti en un nombre très grand (car les bits signés sont traités comme des zéros), 
+                à la différence de <code>&gt;&gt;=</code> qui préserve le signe.  
+              </p>
+              <h5>Opérateurs d’affectation bitwise :</h5>
+              <p>
+                Les opérateurs ci-dessous permettent de faire des opérations sur les bits de deux variables,
+                puis de réaffecter le résultat à la première variable (par exemple <code>x</code>).
+                On les appelle “bitwise” parce qu’ils travaillent directement sur chaque bit (0 ou 1) 
+                des nombres.
+              </p>
+            
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Opérateur</th>
+                    <th>Exemple</th>
+                    <th>Équivalent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&amp;=</code></td>
+                    <td><code>x &amp;= y</code></td>
+                    <td><code>x = x &amp; y</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>^=</code></td>
+                    <td><code>x ^= y</code></td>
+                    <td><code>x = x ^ y</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>|=</code></td>
+                    <td><code>x |= y</code></td>
+                    <td><code>x = x | y</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            
+              <h6>Explications :</h6>
+              
+              <ul>
+                <li>
+                  <strong>&amp; (ET)</strong> : 
+                  Imagine que tu compares deux listes de 0 et de 1. Tu ne gardes un “1” que si <em>les deux</em> sont “1”. 
+                  Sinon, tu mets “0”.  
+                  (<em>Comme si tu disais : “Je ne garde la lumière allumée que si les deux interrupteurs sont en position ON.”</em>)
+                </li>
+                <li>
+                  <strong>^ (XOR)</strong> : 
+                  Imagine que tu compares deux listes de 0 et de 1. Tu mets “1” si c’est différent, sinon “0” si c’est pareil.  
+                  (<em>Comme si tu disais : “La lumière s’allume si un seul interrupteur est ON, pas les deux.”</em>)
+                </li>
+                <li>
+                  <strong>| (OU)</strong> : 
+                  Imagine que tu compares deux listes de 0 et de 1. Tu mets “1” si au moins un des deux est “1”. 
+                  Sinon tu mets “0”.  
+                  (<em>Comme si tu disais : “La lumière s’allume si au moins un interrupteur est ON.”</em>)
+                </li>
+              </ul>
+            
+              <h6>Exemples :</h6>
+              <p>
+                Disons que <code>x = 6</code> (en binaire : <code>0110</code>) et <code>y = 3</code> (en binaire : <code>0011</code>).
+              </p>
+              <ul>
+                <li><code>x &amp;= y</code> :  
+                  <br><code>0110 &amp; 0011 = 0010</code> (seuls les bits qui sont “1” des deux côtés restent “1”)  
+                  <br>Résultat = <code>2</code> en décimal.
+                </li>
+                <li><code>x ^= y</code> :  
+                  <br><code>0110 ^ 0011 = 0101</code> (les bits différents deviennent “1”)  
+                  <br>Résultat = <code>5</code> en décimal.
+                </li>
+                <li><code>x |= y</code> :  
+                  <br><code>0110 | 0011 = 0111</code> (au moins un “1” suffit pour avoir “1”)  
+                  <br>Résultat = <code>7</code> en décimal.
+                </li>
+              </ul>
+            
+              <p>
+                En utilisant <code>&amp;=</code>, <code>^=</code> ou <code>|=</code>, on effectue immédiatement 
+                l’opération et on met le résultat dans <code>x</code> sans avoir besoin de réécrire <code>x = x &amp; y</code>, etc.
+              </p>
+              <h5>Opérateurs d’affectation logique :</h5>
+              <p>
+                Ces opérateurs permettent de faire un test logique sur la variable <code>x</code> avant de lui affecter une nouvelle valeur.
+                On dit qu’ils sont “logiques” (en anglais <em>logical assignment operators</em>) car ils utilisent les mêmes règles que
+                <code>&amp;&amp;</code>, <code>||</code> ou <code>??</code>, <em>puis</em> affectent le résultat à <code>x</code>.
+              </p>
+            
+              <p>
+                Voici le tableau récapitulatif :
+              </p>
+            
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Opérateur</th>
+                    <th>Exemple</th>
+                    <th>Équivalent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&amp;&amp;=</code></td>
+                    <td><code>x &amp;&amp;= y</code></td>
+                    <td><code>x = x &amp;&amp; (x = y)</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>||=</code></td>
+                    <td><code>x ||= y</code></td>
+                    <td><code>x = x || (x = y)</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>??=</code></td>
+                    <td><code>x ??= y</code></td>
+                    <td><code>x = x ?? (x = y)</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            
+              <h6>Explications :</h6>
+              <ul>
+                <li>
+                  <strong><code>x &amp;&amp;= y</code></strong>  
+                  “<em>Si</em> <code>x</code> est déjà vrai (pas nul, pas 0, pas vide), alors on remplace la valeur de <code>x</code> par <code>y</code>. 
+                  <em>Sinon</em>, on ne change rien.”  
+                  <br>En d’autres mots, “Je n’ouvre la porte qu’<em>SI</em> elle est déjà ouverte, sinon je ne fais rien.”  
+                </li>
+                <li>
+                  <strong><code>x ||= y</code></strong>  
+                  “<em>Si</em> <code>x</code> est faux ou n’a pas de valeur (0, false, chaîne vide, etc.), alors on met <code>y</code> à la place. 
+                  <em>Sinon</em>, on garde <code>x</code> comme il est.”  
+                  <br>En d’autres mots, “Je vais allumer la lumière <em>SEULEMENT SI</em> elle est éteinte.”  
+                </li>
+                <li>
+                  <strong><code>x ??= y</code></strong>  
+                  “<em>Si</em> <code>x</code> est <code>null</code> ou <code>undefined</code> (c’est-à-dire qu’il n’a vraiment pas de valeur), 
+                  alors on lui donne la valeur <code>y</code>. <em>Sinon</em>, on ne touche pas à <code>x</code>.”  
+                  <br>En d’autres mots, “Je ne remplis la boîte que <em>SI</em> elle est vide. Si elle contient déjà quelque chose, je n’y touche pas.”  
+                </li>
+              </ul>
+            
+              <h6>Exemples :</h6>
+              <pre><code>
+            // Exemple 1 : &&=
+            let a = 5;       // a est vrai (truthy) car 5 != 0
+            let b = 0;
+            a &&= b;         // Signifie : a = a && b
+                             // Comme a était 'truthy', on affecte b à a
+            console.log(a);  // Résultat : 0 (falsy)
+            
+            // Exemple 2 : ||=
+            let x = 0;       // x est faux (falsy) car 0
+            let y = 10;
+            x ||= y;         // Signifie : x = x || y
+                             // Comme x est falsy, x prend la valeur de y
+            console.log(x);  // Résultat : 10
+            
+            // Exemple 3 : ??=
+            let c = null;    // c n’a pas de valeur (null)
+            let valeur = "Bonjour";
+            c ??= valeur;    // Signifie : c = c ?? valeur
+                             // c vaut null, donc on affecte "Bonjour"
+            console.log(c);  // Résultat : "Bonjour"
+            </code></pre>
+            
+              <p>
+                Résumons :<br>
+                <strong><code>x &amp;&amp;= y</code></strong> : si <code>x</code> est “vrai”, on met <code>y</code> dans <code>x</code>.  
+                <br>
+                <strong><code>x ||= y</code></strong> : si <code>x</code> est “faux”, on met <code>y</code> dans <code>x</code>.  
+                <br>
+                <strong><code>x ??= y</code></strong> : si <code>x</code> est “null” ou “undefined”, on met <code>y</code> dans <code>x</code>.  
+              </p>
+        </section>
+    </section>    
+</main>
+</body>
+</html>

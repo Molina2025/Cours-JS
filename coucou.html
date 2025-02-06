@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours sur les Variables</title>
+</head>
+<body>
+    <p>
+        Après la déclaration juste ci-dessus, celle-ci est <em>undefined</em>, 
+        afin d'attribuer une valeur à la variable, il faut utiliser le signe (<code>=</code>).<br>
+        Un exemple :
+    </p>
+    <p id="nomId"></p>
+
+    <script>
+        // Déclaration d'une variable
+        const nomDeclaration = "Après déclaration, il faut faire appel à la déclaration grâce à document.getElementById('nomId').innerHTML = nomDeclaration;";
+        
+        // Affichage dans l'élément avec l'ID 'nomId'
+        document.getElementById('nomId').innerHTML = nomDeclaration;
+    </script>
+</body>
+</html>
