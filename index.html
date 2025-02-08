@@ -597,6 +597,56 @@ fruits = ["fraise", "cerise"];
                 <strong><code>x ??= y</code></strong> : si <code>x</code> est “null” ou “undefined”, on met <code>y</code> dans <code>x</code>.  
               </p>
         </section>
+        <section>
+          <h4>Les données :</h4>
+          <p>JavaScript à 8 Datatypes différentes :</p>
+          <ul>
+            <li>String :<br><br>
+            Un string est une chaîne de texte, une série de caractères et les chaines doivent êtres entre guillemets.<br>
+            Petite astuce : Il est possible d'utiliser des guillemetsà l'intérieur d'une chaîne à condition qu'ils ne correspondent pas aux guillemets qui entourent la chaîne.<br>
+            <br>Exemple :<br>
+            <p id="exString"></p></li>
+            <li>Number :<br><br>
+            Number concerne tous les nombres sous forme de nombres décimaux de plus les exponentielle peuvent être écrits avec une notation scientifique.<br>
+            Exemple :<br>
+            <p id="exNumber"></p></li>
+            <li>Bigint :<br><br>
+            Bigint est utilisé pour stocker des valeurs entières trop grandes</li><br>
+            <li>Boolean :<br><br>
+            Les boolean ne peuvent avoir que deux valeurs <em>true</em> ou <em>false</em>.<br><br>
+            Exemple : <br>
+            <p id="exBoolean"></p></li>
+            <li>Undefined :<br><br>
+            En JavaScript une variable sans valeur est undefined de même pour son type.<br>
+            Exemple : <br>
+            <p id="exUndefined"></p></li>
+            <li>Null :<br><br>
+            Une valeur vide n'est pas une valeur <em>undefined</em>, c'est à dire une chaîne vide et à la fois une valeur et à un type.<br><br>
+            Exemple : <br><br>
+            let car1 = ""<p id="exNull"></p></li>
+            <li>Symbol</li>
+            <li>Object :<br><br>
+            Les objets JavaScript sont réalisés avec des accolades {} et écrites par paires nom : valeur.<br><br>
+            Exemple :<br>
+            <p id="exObject"></p></li>
+          </ul>
+          <script>
+            let string = "je s'appel Groot";
+            document.getElementById("exString").innerHTML = string;
+            let t = 695e4;
+            document.getElementById("exNumber").innerHTML = "695e4 =" + " " + t;
+            let m = 3;
+            let l = 3;
+            let q = 6;
+            document.getElementById("exBoolean").innerHTML = "m = 3 et l = 3 is " + (m == l) + " " + "quand à " + "m = 3 et q = 6 is " + " " + (m == q);
+            let car;
+            document.getElementById("exUndefined").innerHTML = "let car sans valeur est égale à :" + " " + car + ", " + "typeof permet de donner le type et car à pour valeur :" + " " + typeof car;
+            let car1 = "";
+            document.getElementById("exNull").innerHTML = "la valeur de car1 est :" + " " + car1 + "<br>" + "et son type est :" + " " + typeof car1;
+            const personnage = {prénom:"Gérald", nomDeFamille:"Deriv", age:"300"};
+            document.getElementById("exObject").innerHTML = "cont personnage = {prénom:'Géral', nomDeFamille:'Deriv', age:'300'}" + "<br>" + " personnage.prénom donnera la valeur : " + personnage.prénom + "<br> personnage.age donnera la valeur : " + personnage.age;
+          </script>
+        </section>
     </section>    
 </main>
 </body>
